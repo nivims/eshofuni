@@ -6,20 +6,20 @@ $this->inc('elements/header.php');
          
       <!-- Static navbar -->
        <h2><a href="<?php  echo DIR_REL?>/"><?php $block = Block::getByName('My_Site_Name'); if($block && $block->bID) $block->display(); else echo SITE;?></a></h2>
-      <div class="navbar">
+      <div class="navbar" role="navigation">
         <div class="container">          
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+          <a class="navbar-brand" href="#">Project name</a>
           <div class="nav-collapse collapse">
-            <a class="navbar-brand" href="#">Project name</a>
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
+          <?php
+          $a = new Area('Header Nav');
+          $a->setBlockLimit(1);
+          $a->display($c);
+          ?>
           </div><!--/.nav-collapse -->
         </div>
       </div>
