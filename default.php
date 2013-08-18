@@ -15,18 +15,24 @@ $this->inc('elements/header.php');
           </button>
           <a class="navbar-brand" href="#">Project name</a>
           <div class="nav-collapse collapse">
-<?php
-          $a = new Area('Custom Header Nav');
-          $a->setBlockLimit(1);
-          $a->display($c);
-          ?>
-          </div><!--/.nav-collapse -->
+      <?php
+    $bt_nav = BlockType::getByHandle('autonav');
+    $bt_nav->controller->displayPages = 'top';
+    $bt_nav->controller->orderBy = 'display_asc';
+    $bt_nav->controller->displaySubPages = 'none';
+    $bt_nav->render('eshofuni_header_menu');
+    ?>   
+
+    
+  </div><!--/.nav-collapse -->
         </div>
       </div>
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <p>Nice and simple blank canvas page start for a Concrete5 theme using Bootstrap.<br />
-          Features a navbar and sticky footer.</p>
+       <?php
+          $a = new Area('Site banner');
+          $a->display($c);
+          ?>
         </p>
       </div>
     <div class="main-content-area">
