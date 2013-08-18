@@ -15,8 +15,8 @@ $this->inc('elements/header.php');
           </button>
           <a class="navbar-brand" href="#">Project name</a>
           <div class="nav-collapse collapse">
-          <?php
-          $a = new Area('Header Nav');
+<?php
+          $a = new Area('Custom Header Nav');
           $a->setBlockLimit(1);
           $a->display($c);
           ?>
