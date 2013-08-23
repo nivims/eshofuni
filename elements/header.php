@@ -5,7 +5,8 @@ defined('C5_EXECUTE') or die(_("Access Denied."));
 <html lang="en">
   <head>
     <?php Loader::element('header_required'); ?>
-    <link rel="stylesheet" type="text/css" href="<?php print $this->getStyleSheet('bootstrap/css/bootstrap.css'); ?>" />
+    <link rel="stylesheet" type="text/css" href="<?php print $this->getStyleSheet('/css/bootstrap.css'); ?>" />
+    <script type="text/javascript" src="<?php echo $this->getThemePath()?>/js/bootstrap.min.js"></script>
   </head>
   <body>   
     <!-- Wrap all page content here -->
